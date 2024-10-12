@@ -1,0 +1,34 @@
+@import url('../App.css');
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 75px;
+    gap: 40px;
+    text-align: left;
+    flex-direction: column;
+}
+
+.text-content, .resume-content {
+    flex: 1;
+}
+
+.text-content p {
+    padding-bottom: 15px;
+}
+
+@media (min-width: 1000px) {
+    .about-container {
+        flex-direction: row;
+    }
+}

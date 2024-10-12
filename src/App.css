@@ -1,35 +1,10 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-p {
-    color: white;
-    font-size: 1.5vh;
-    margin: 0;
-}
-
-h1 {
-    margin: 0;
-    color: white;
-    font-size: 5vh;
-}
-
-.Center {
-    height: 75vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+:root {
+    --text-color: #dddddd;
+    --gray: #cccccc;
+    --cyan: #00ffff;
+    --teal: #008080;
+    --background-color: rgb(40,44,52);
+    --background-translucent: rgba(40, 44, 52, 0.75);
 }
 
 #tsparticles {
@@ -43,35 +18,80 @@ h1 {
     z-index: -1;
 }
 
-nav {
-    background-color: #282c34;
-    top: 10px;
-    padding: 8px;
-    width: 50%;
-    margin: 20px auto; /* center horizontally */
-    border-radius: 20px;
-    border: 2px solid #00ffff;
+body {
+    color: var(--text-color);
+    text-align: center;
+    background-color: var(--background-color);
+    font-family: 'Consolas', 'Courier New', monospace;
 }
 
+p {
+    font-size: 1.5vh;
+    margin: 10px 0px;
+}
+h1 {
+    margin: 5px 0px 20px 0px;
+    font-size: 5vh;
+}
+
+.card {
+    background-color: var(--background-translucent);
+    border: 2px solid var(--gray); /* Add a border for better visibility */
+    border-radius: 8px; /* Rounded corners */
+    margin: 0px 50px;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 30px;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
 nav ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
     padding: 0;
-    margin: 0;
+    margin: 10px;
 }
-
-nav ul li {
-    margin: 0;
-}
-
 nav ul li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
 }
-
 nav ul li a:hover {
-    color: #00ffff;  /* Matches your particles color */
+    color: #00ffff;
+}
+
+.left-icons .right-icons {
+    width: 33%;
+}
+
+.pages {
+    border: 2px solid #00ffff;
+    border-radius: 100px;
+}
+
+.right-icons {
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    color: var(--text-color);
+    font-size: 2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+nav a:hover {
+    transform: scale(1.2);
+    color: #00ffff;
+}
+
+.footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    font-size: 1.5vh;
 }

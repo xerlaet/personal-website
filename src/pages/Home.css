@@ -1,0 +1,40 @@
+@import url('../App.css');
+
+.Center {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.5vh;
+}
+
+.name-highlight {
+    font-weight: bold;
+    font-size: 5vh;
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px; /* Adjust the distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.arrow-icon {
+    font-size: 3rem; /* Adjust the size */
+    color: var(--gray); /* Adjust the color */
+    animation: fadeInOut 2s ease-in-out infinite;
+    padding-top: 40px;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
