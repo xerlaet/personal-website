@@ -32,3 +32,21 @@
         flex-direction: row;
     }
 }
+
+.social-icons {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px; /* Adjust the gap between the icons */
+    margin-top: 20px; /* Adjust the space above the icons */
+}
+
+.icon {
+    font-size: 2.5rem; /* Adjust the size of the icons */
+    color: #ffffff; /* Icon color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.icon:hover {
+    color: var(--teal); /* Change to LinkedIn color on hover */
+}

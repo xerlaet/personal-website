@@ -9,10 +9,6 @@ import ironclad from '../images/ironclad.png'
 import vindicator from '../images/vindicator.png'
 
 function Projects() {
-    useEffect(() => {
-        document.title = "Projects - Robert Teal";
-    }, []);
-
     const projects = [
         {
             id: 1,
@@ -42,27 +38,19 @@ function Projects() {
 
     return (
         <motion.div
-            initial={{ opacity: 0}}  
-            animate={{ opacity: 1}}     
-            exit={{ opacity: 0}}      
-            transition={{ duration: 1 }}     
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
         >
-            <h2>Projects</h2>
+            <h1>Projects</h1>
             <div className="projects-container">
                 {projects.map(project => (
                     <div key={project.id} className="project-card card">
                         <img src={project.image} alt={project.name} className="project-image" />
                         <div className="project-details">
-                            <h3>{project.name}</h3>
+                            <h2>{project.name}</h2>
                             <p>{project.description}</p>
-                            <Typed
-                                strings={[ project.description
-                                ]}
-                                typeSpeed={50}
-                                backSpeed={30}
-                                loop={false}
-                                smartBackspace={true}
-                            />
                         </div>
                     </div>
                 ))}

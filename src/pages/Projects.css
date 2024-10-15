@@ -1,7 +1,6 @@
 @import url('../App.css');
 
 .projects-container {
-    padding: 10px 100px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -9,9 +8,7 @@
 
 .project-card {
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
-    overflow: hidden;
 }
 
 .project-image {
@@ -25,7 +22,7 @@
     flex: 1;
 }
 
-@media (min-width: 1500px) {
+/* @media (min-width: 1500px) {
     .projects-container {
         grid-template-columns: 1fr 1fr;
     }
@@ -35,4 +32,4 @@
     .projects-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
-}
+} */

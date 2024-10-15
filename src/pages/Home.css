@@ -1,7 +1,7 @@
 @import url('../App.css');
 
 .Center {
-    height: 100vh;
+    padding-top: 35vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@
     font-size: 3rem; /* Adjust the size */
     color: var(--gray); /* Adjust the color */
     animation: fadeInOut 2s ease-in-out infinite;
-    padding-top: 40px;
+    padding-top: 200px;
 }
 
 @keyframes fadeInOut {

@@ -3,8 +3,9 @@
     --gray: #cccccc;
     --cyan: #00ffff;
     --teal: #008080;
-    --background-color: rgb(40,44,52);
+    --background-color: rgb(40, 44, 52);
     --background-translucent: rgba(40, 44, 52, 0.75);
+    --background-outer: rgb(20, 20, 20);
 }
 
 #tsparticles {
@@ -18,75 +19,117 @@
     z-index: -1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--text-color);
     text-align: center;
-    background-color: var(--background-color);
+    background-image: radial-gradient(circle,
+            var(--background-color), var(--background-outer));
+    background-attachment: fixed;
+    background-size: cover;
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
 p {
-    font-size: 1.5vh;
+    font-size: 1.3vh;
     margin: 10px 0px;
 }
+
 h1 {
-    margin: 5px 0px 20px 0px;
-    font-size: 5vh;
+    padding-top: 50px;
+    font-size: 4vh;
+}
+
+h2 {
+    font-size: 2vh;
+    color: var(--teal);
 }
 
 .card {
     background-color: var(--background-translucent);
-    border: 2px solid var(--gray); /* Add a border for better visibility */
-    border-radius: 8px; /* Rounded corners */
-    margin: 0px 50px;
+    border: 2px solid var(--gray);
+    /* Add a border for better visibility */
+    border-radius: 8px;
+    /* Rounded corners */
+    margin: 0px 75px;
 }
 
-
-nav {
+/* Base styling */
+.App {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 30px;
-    font-family: 'Consolas', 'Courier New', monospace;
 }
-nav ul {
+
+/* Vertical Nav Bar */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 150px;
+    padding: 20px;
+    /* Optional padding */
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    background-color: var(--background-translucent);
+}
+
+.nav-bar ul {
     list-style: none;
-    display: flex;
-    justify-content: space-around;
+    /* Remove default list styling */
     padding: 0;
-    margin: 10px;
+    /* Remove padding */
 }
-nav ul li a {
-    color: var(--text-color);
+
+.nav-bar a {
     text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-}
-nav ul li a:hover {
-    color: #00ffff;
-}
-
-.left-icons .right-icons {
-    width: 33%;
-}
-
-.pages {
-    border: 2px solid #00ffff;
-    border-radius: 100px;
-}
-
-.right-icons {
+    /* Remove underline */
+    color: white;
+    /* Text color */
     display: flex;
-    gap: 20px;
+    /* Use flex to allow for centering */
+    justify-content: center;
+    /* Center text horizontally */
+    height: 50px;
+    /* Set a height for the links */
+    font-size: 1.2em;
+    margin: 20px 0;
+    /* Space between nav items */
 }
-nav a {
-    color: var(--text-color);
-    font-size: 2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+
+.nav-bar li.active a {
+    font-weight: bold;
+    color: var(--teal);
 }
-nav a:hover {
-    transform: scale(1.2);
-    color: #00ffff;
+
+.main-content {
+    display: block;
+    width: 100%;
+}
+
+/* Content Sections */
+.content-section {
+    padding-left: 170px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+
+#home {
+    color: white;
+}
+
+#about {
+    color: white;
+}
+
+#projects {
+    color: white;
 }
 
 .footer {

@@ -1,21 +1,17 @@
-import React, {useEffect, useState} from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Particles, {initParticlesEngine} from "@tsparticles/react";
+import React, { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import particlesOptions from "./particles.json";
-import {loadFull} from "tsparticles";
+import { loadFull } from "tsparticles";
 import "./App.css";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faR } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
 import Home from "./pages/Home.js";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 
 function App() {
+    // ts particles
     const [init, setInit] = useState(false);
-
     useEffect(() => {
         if (init) {
             return;
@@ -28,52 +24,59 @@ function App() {
         });
     }, []);
 
+    // scroll listener
+    const [activeSection, setActiveSection] = useState('home');
+    const handleScroll = () => {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+                setActiveSection(section.id);
+            }
+        });
+    };
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    useEffect(() => {
+        document.title = `Robert Teal - ${activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}`;
+    }, [activeSection]);
+
     return (
-        <Router>
-            <div className="App">
-                {init && <Particles options={particlesOptions} />}
+        <div className="App">
+            {init && <Particles options={particlesOptions} />}
 
-                {/* <nav>
-                    <div className="left-icons">
-                        <Link to="/">
-                            <FontAwesomeIcon icon={faR} />
-                        </Link>
-                    </div>
-                    <div className="pages">
-                        <ul>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/projects">Projects</Link></li>
-                        </ul>
-                    </div>
-                    <div className="right-icons">
-                        <a href="https://www.linkedin.com/in/robert-teal-88444b2a2/" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faLinkedin} />
-                        </a>
-                        <a href="https://github.com/xerlaet" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faGithubSquare} />
-                        </a>
-                    </div>
-                </nav> */}
+            <nav className="nav-bar">
+                <ul>
+                    <li className={activeSection === 'home' ? 'active' : ''}>
+                        <a href="#home">Home</a>
+                    </li>
+                    <li className={activeSection === 'about' ? 'active' : ''}>
+                        <a href="#about">About</a>
+                    </li>
+                    <li className={activeSection === 'projects' ? 'active' : ''}>
+                        <a href="#projects">Projects</a>
+                    </li>
+                </ul>
+            </nav>
 
-                <AnimatedRoutes />
-        
-                {/* <p className="footer">Last updated October 12, 2024</p> */}
+            <div className="main-content">
+                <section id="home" className="content-section">
+                    <Home />
+                </section>
+
+                <section id="about" className="content-section">
+                    <About />
+                </section>
+
+                <section id="projects" className="content-section">
+                    <Projects />
+                </section>
             </div>
-        </Router>
-    );
-}
-
-function AnimatedRoutes() {
-    const location = useLocation();
-    
-    return (
-        <animatePresence exitBeforeEnter>
-            <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/projects" element={<Projects />} />
-            </Routes>
-        </animatePresence>
+        </div>
     );
 }
 
