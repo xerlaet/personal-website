@@ -51,18 +51,18 @@ h2 {
 .card {
     background-color: var(--background-translucent);
     border: 2px solid var(--gray);
-    /* Add a border for better visibility */
+
     border-radius: 8px;
-    /* Rounded corners */
+
     margin: 0px 75px;
 }
 
-/* Base styling */
+
 .App {
     display: flex;
 }
 
-/* Vertical Nav Bar */
+
 .nav-bar {
     position: fixed;
     top: 0;
@@ -70,35 +70,35 @@ h2 {
     height: 100vh;
     width: 150px;
     padding: 20px;
-    /* Optional padding */
+
     display: flex;
     flex-direction: column;
-    /* Stack items vertically */
+
     justify-content: center;
     background-color: var(--background-translucent);
 }
 
 .nav-bar ul {
     list-style: none;
-    /* Remove default list styling */
+
     padding: 0;
-    /* Remove padding */
+
 }
 
 .nav-bar a {
     text-decoration: none;
-    /* Remove underline */
+
     color: white;
-    /* Text color */
+
     display: flex;
-    /* Use flex to allow for centering */
+
     justify-content: center;
-    /* Center text horizontally */
+
     height: 50px;
-    /* Set a height for the links */
+
     font-size: 1.2em;
     margin: 20px 0;
-    /* Space between nav items */
+
 }
 
 .nav-bar li.active a {
@@ -111,7 +111,7 @@ h2 {
     width: 100%;
 }
 
-/* Content Sections */
+
 .content-section {
     padding-left: 170px;
     width: 100%;

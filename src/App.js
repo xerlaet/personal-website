@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import particlesOptions from "./particles.json";
 import { loadFull } from "tsparticles";
 import "./App.css";
 
-
 import Home from "./pages/Home.js";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+
+const MemoizedParticles = memo(() => {
+    return <Particles options={particlesOptions} />;
+});
 
 function App() {
     // ts particles
@@ -47,7 +50,7 @@ function App() {
 
     return (
         <div className="App">
-            {init && <Particles options={particlesOptions} />}
+            {init && <MemoizedParticles />}
 
             <nav className="nav-bar">
                 <ul>
