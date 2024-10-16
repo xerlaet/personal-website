@@ -6,6 +6,10 @@
     --background-color: rgb(40, 44, 52);
     --background-translucent: rgba(40, 44, 52, 0.75);
     --background-outer: rgb(20, 20, 20);
+    --gray0: 0,0,0;
+    --gray1: 20,20,20;
+    --gray2: 40,40,40;
+    --gray3: 60,60,60;
 }
 
 #tsparticles {
@@ -27,14 +31,14 @@ body {
     color: var(--text-color);
     text-align: center;
     background-image: radial-gradient(circle,
-            var(--background-color), var(--background-outer));
+            var(--background-color), rgb(var(--gray1)));
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.2vh;
 }
 
 p {
-    font-size: 1.3vh;
     margin: 10px 0px;
 }
 
@@ -46,22 +50,27 @@ h1 {
 h2 {
     font-size: 2vh;
     color: var(--teal);
+    margin: 0px;
 }
 
 .card {
-    background-color: var(--background-translucent);
+    background-image: linear-gradient(to bottom right,
+        rgba(var(--gray3),0.75),
+        rgba(var(--gray1),0.75));
     border: 2px solid var(--gray);
-
     border-radius: 8px;
-
     margin: 0px 75px;
+    padding: 40px;
+    gap: 25px;
+    max-width: 1000px;
+    width: calc(100% - 150px);
+    margin: 0 auto;
+    display: flex;
 }
-
 
 .App {
     display: flex;
 }
-
 
 .nav-bar {
     position: fixed;
@@ -69,38 +78,29 @@ h2 {
     left: 0;
     height: 100vh;
     width: 150px;
-    padding: 20px;
-
+    padding: 10px;
     display: flex;
     flex-direction: column;
-
     justify-content: center;
-    background-color: var(--background-translucent);
+    background-image: linear-gradient(to bottom right,
+        rgba(var(--gray3),0.5),
+        rgba(var(--gray2),0.5));
 }
-
 .nav-bar ul {
     list-style: none;
-
     padding: 0;
 
 }
-
 .nav-bar a {
     text-decoration: none;
-
     color: white;
-
     display: flex;
-
     justify-content: center;
-
     height: 50px;
-
     font-size: 1.2em;
     margin: 20px 0;
 
 }
-
 .nav-bar li.active a {
     font-weight: bold;
     color: var(--teal);
@@ -111,14 +111,22 @@ h2 {
     width: 100%;
 }
 
-
 .content-section {
-    padding-left: 170px;
+    padding-left: 180px;
+    padding-right: 20px;
     width: 100%;
     box-sizing: border-box;
     min-height: 100vh;
 }
 
+@media (max-width: 1000px) {
+    .nav-bar {
+        display: none;
+    }
+    .content-section {
+        padding-left: 20px;
+    }
+}
 
 #home {
     color: white;

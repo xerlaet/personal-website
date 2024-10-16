@@ -1,0 +1,20 @@
+@import url('../App.css');
+
+
+.arrow-button {
+    background: transparent; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 24px; /* Size of the icons */
+    padding: 10px; /* Padding around the icons */
+    color: var(--text-color); /* Icon color */
+}
+
+.arrow-button:hover {
+    color: var(--teal); /* Change color on hover */
+}
+
+.project-image, iframe {
+    max-width: 80%; /* Make sure the images/videos fit the container */
+    height: auto; /* Maintain aspect ratio */
+}

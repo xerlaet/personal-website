@@ -10,11 +10,8 @@
 }
 
 .about-container {
-    display: flex;
     justify-content: center;
     align-items: stretch;
-    padding: 75px;
-    gap: 40px;
     text-align: left;
     flex-direction: column;
 }
@@ -28,6 +25,15 @@
     padding-bottom: 15px;
 }
 
+table {
+    padding: 10px 0px;
+}
+td {
+    min-width: 130px;
+    vertical-align: top;
+    padding: 5px 0px;
+}
+
 @media (min-width: 1000px) {
     .about-container {
         flex-direction: row;
@@ -39,7 +45,7 @@
     justify-content: left;
     align-items: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 
