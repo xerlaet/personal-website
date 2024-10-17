@@ -13,7 +13,7 @@ const MemoizedParticles = memo(() => {
 });
 
 function App() {
-    // ts particles
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const [init, setInit] = useState(false);
     useEffect(() => {
         if (init) {
@@ -27,7 +27,6 @@ function App() {
         });
     }, []);
 
-    // scroll listener
     const [activeSection, setActiveSection] = useState('home');
     const handleScroll = () => {
         const sections = document.querySelectorAll('section');
