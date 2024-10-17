@@ -25,7 +25,7 @@ function App() {
         }).then(() => {
             setInit(true);
         });
-    }, []);
+    }, [init]);
 
     const [activeSection, setActiveSection] = useState('home');
     const handleScroll = () => {
