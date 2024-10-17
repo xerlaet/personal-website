@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin-bottom: 40px;
 }
 
 .project-media {
@@ -18,6 +19,10 @@
 .project {
     padding-top: 10px;
     padding-bottom: 10px;
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
 }
 
 .project-details {
@@ -33,7 +38,26 @@
     position: relative;
     margin: 0 auto;
     min-width: 200px;
-    max-width: 40%;
+    max-width: 80%;
+    height: 250px;
+}
+@media (min-width: 800px) {
+    .project {
+        flex-direction: row;
+        /* height: 250px; */
+        padding: 40px;
+    }
+    .slideshow {
+        max-width: 40%;
+    }
+}
+
+.project-link {
+    text-decoration: none; 
+    color: var(--text-color);
+}
+.project-link:hover {
+    color: var(--teal);
 }
 
 /* @media (min-width: 1500px) {

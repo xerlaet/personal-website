@@ -18,11 +18,11 @@ function Slideshow({ media }) {
         if (item.type === 'video') {
             return (
                 <iframe
-                    width="800"
-                    height="450"
-                    src={item.src}
+                    width="400"
+                    height="225"
+                    src={`${item.src}?modestbranding=1&rel=0&autoplay=0&controls=1&showinfo=0`}
                     title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                     allowFullScreen
                 ></iframe>
             );

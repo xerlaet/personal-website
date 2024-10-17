@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from 'framer-motion';
 import { ReactTyped as Typed } from 'react-typed';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

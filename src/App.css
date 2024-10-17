@@ -99,8 +99,8 @@ h2 {
     height: 50px;
     font-size: 1.2em;
     margin: 20px 0;
-
 }
+
 .nav-bar li.active a {
     font-weight: bold;
     color: var(--teal);

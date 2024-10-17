@@ -1,5 +1,10 @@
 @import url('../App.css');
 
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .profile-picture {
     width: 200px;
     height: 200px;
@@ -33,7 +38,9 @@ td {
     vertical-align: top;
     padding: 5px 0px;
 }
-
+.faint {
+    color: gray;
+}
 @media (min-width: 1000px) {
     .about-container {
         flex-direction: row;
