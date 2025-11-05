@@ -146,3 +146,20 @@ h2 {
     width: 100%;
     font-size: 1.5vh;
 }
+
+.progress-banner {
+    /* translucent red highlight so background shows through */
+    background: rgba(220, 38, 38, 0.18); /* semi-transparent red */
+    color: #ffecec; /* light text for contrast */
+    padding: 10px 16px;
+    text-align: center;
+    font-weight: 700;
+    backdrop-filter: blur(6px); /* soft blur of content behind */
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    position: fixed;
+    left:0;
+    top: 0;
+    width: 100%;
+    z-index:1000;
+}

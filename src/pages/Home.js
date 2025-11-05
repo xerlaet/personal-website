@@ -7,24 +7,29 @@ import './Home.css';
 
 function Home() {
     return (
-        <div class="Center">
-            <Typed
-                strings={[
-                    "Hello! My name is <br><br> <span class='name-highlight'>Robert Teal</span> <br><br> I'm a computer science major at UT Dallas."
-                ]}
-                typeSpeed={30}
-                backSpeed={30}
-                loop={false}
-                smartBackspace={true}
-            />
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 5, duration: 2 }}
-                exit={{ opacity: 0 }}
-            >
-                <FontAwesomeIcon icon={faAnglesDown} className="arrow-icon" />
-            </motion.div>
+        <div className="home-page">
+            <div className="progress-banner" role="status">
+                <p>Website in progress - check back soon</p>
+            </div>
+            <div class="Center">
+                <Typed
+                    strings={[
+                        "Hello! My name is <br><br> <span class='name-highlight'>Robert Teal</span> <br><br> I'm a computer science major at UT Dallas."
+                    ]}
+                    typeSpeed={30}
+                    backSpeed={30}
+                    loop={false}
+                    smartBackspace={true}
+                />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 5, duration: 2 }}
+                    exit={{ opacity: 0 }}
+                >
+                    <FontAwesomeIcon icon={faAnglesDown} className="arrow-icon" />
+                </motion.div>
+            </div>
         </div>
     );
 }
